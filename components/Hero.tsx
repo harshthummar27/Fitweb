@@ -71,8 +71,10 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Content Overlay */}
-      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 text-center w-full py-4 md:py-6">
+      {/* Container */}
+      <div className="container mx-auto relative z-10 w-full h-full flex items-center justify-center">
+        {/* Content Overlay */}
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 text-center w-full py-4 md:py-6">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-3">
           Transform Your Body
         </h1>
@@ -106,6 +108,7 @@ export default function Hero() {
           >
             Learn More
           </a>
+        </div>
         </div>
       </div>
 

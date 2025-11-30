@@ -147,12 +147,12 @@ export default function HighProteinFood({ showAsRow = false }: HighProteinFoodPr
                     {/* Veg/Non-Veg Icon */}
                     <div className="absolute top-2 left-2">
                       {food.type === 'Veg' ? (
-                        <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center">
-                          <span className="text-white text-xs font-bold">✓</span>
+                        <div className="w-6 h-6 border-2 border-green-600 bg-white rounded flex items-center justify-center">
+                          <div className="w-3 h-3 bg-green-600 rounded-full"></div>
                         </div>
                       ) : (
-                        <div className="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center">
-                          <span className="text-white text-xs font-bold">●</span>
+                        <div className="w-6 h-6 border-2 border-red-600 bg-white rounded flex items-center justify-center">
+                          <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] border-l-transparent border-r-transparent border-b-red-600"></div>
                         </div>
                       )}
                     </div>
@@ -212,12 +212,12 @@ export default function HighProteinFood({ showAsRow = false }: HighProteinFoodPr
                 {/* Veg/Non-Veg Icon */}
                 <div className="absolute top-2 left-2">
                   {food.type === 'Veg' ? (
-                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">✓</span>
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-green-600 bg-white rounded flex items-center justify-center">
+                      <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-600 rounded-full"></div>
                     </div>
                   ) : (
-                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-red-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">●</span>
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-red-600 bg-white rounded flex items-center justify-center">
+                      <div className="w-0 h-0 border-l-[5px] border-r-[5px] border-b-[8px] sm:border-l-[6px] sm:border-r-[6px] sm:border-b-[10px] border-l-transparent border-r-transparent border-b-red-600"></div>
                     </div>
                   )}
                 </div>
