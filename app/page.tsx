@@ -1,18 +1,29 @@
 import type { Metadata } from 'next'
-import Navbar from '@/components/Navbar'
-import Hero from '@/components/Hero'
-import Categories from '@/components/Categories'
-import About from '@/components/About'
-import Services from '@/components/Services'
-import CalculatorsSection from '@/components/CalculatorsSection'
-import HighProteinFood from '@/components/HighProteinFood'
-import HighCalorieFood from '@/components/HighCalorieFood'
-import HighCalciumFood from '@/components/HighCalciumFood'
-import HighVitaminFood from '@/components/HighVitaminFood'
-import BlogPreview from '@/components/BlogPreview'
-import Features from '@/components/Features'
-import DietPlanForm from '@/components/DietPlanForm'
-import Footer from '@/components/Footer'
+
+// Layout Components
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+
+// Home Page Sections (in order)
+import Hero from '@/components/home/Hero'
+import Categories from '@/components/home/Categories'
+import Foods from '@/components/home/Foods'
+import Fruits from '@/components/home/Fruits'
+import Vegetables from '@/components/home/Vegetables'
+import Features from '@/components/home/Features'
+import Services from '@/components/home/Services'
+
+// Nutrition Components
+import HighProteinFood from '@/components/nutrition/HighProteinFood'
+import HighCalorieFood from '@/components/nutrition/HighCalorieFood'
+import HighCalciumFood from '@/components/nutrition/HighCalciumFood'
+
+// Calculators Section
+import CalculatorsSection from '@/components/calculators/CalculatorsSection'
+
+// Additional Home Sections
+import BlogPreview from '@/components/home/BlogPreview'
+import DietPlanForm from '@/components/home/DietPlanForm'
 
 export const metadata: Metadata = {
   title: 'FitZone Gym - Transform Your Body, Transform Your Life | Home',
@@ -37,41 +48,94 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen">
+      {/* ============================================
+          STEP 1: NAVIGATION BAR
+          ============================================ */}
       <Navbar />
       
-      {/* Section 1: Hero - First Impression */}
+      {/* ============================================
+          STEP 2: HERO SECTION - First Impression
+          Main banner with call-to-action
+          ============================================ */}
       <Hero />
       
-      {/* Section 2: Quick Navigation */}
+      {/* ============================================
+          STEP 3: QUICK NAVIGATION - Categories
+          Quick access to different categories
+          ============================================ */}
       <Categories />
       
-      {/* Section 3: Why Choose Us - Build Trust Early */}
-      <Features />
+      {/* ============================================
+          STEP 3.5: FOODS SECTION
+          Display various food items with nutritional info
+          ============================================ */}
+      <Foods />
       
-      {/* Section 4: About Us - Build Credibility */}
-      <About />
+      {/* ============================================
+          STEP 3.6: FRUITS SECTION
+          Display various fruits with nutritional info
+          ============================================ */}
+      <Fruits />
       
-      {/* Section 5: Our Goals - What We Offer */}
-      <Services />
+      {/* ============================================
+          STEP 3.7: VEGETABLES SECTION
+          Display various vegetables with nutritional info
+          ============================================ */}
+      <Vegetables />
       
-      {/* Section 6: Nutrition Information - Food Sections */}
+      {/* ============================================
+          STEP 4: HIGH PROTEIN FOOD
+          High protein food items
+          ============================================ */}
       <HighProteinFood showAsRow={true} />
-      <HighCalorieFood showAsRow={true} />
-      <HighCalciumFood showAsRow={true} />
-      <HighVitaminFood showAsRow={true} />
       
-      {/* Section 7: Fitness Calculators - Interactive Tools */}
+      {/* ============================================
+          STEP 5: HIGH CALORIE FOOD
+          High calorie food items
+          ============================================ */}
+      <HighCalorieFood showAsRow={true} />
+      
+      {/* ============================================
+          STEP 6: HIGH CALCIUM FOOD
+          High calcium food items
+          ============================================ */}
+      <HighCalciumFood showAsRow={true} />
+      
+      {/* ============================================
+          STEP 7: FITNESS CALCULATORS
+          Interactive tools for fitness tracking
+          ============================================ */}
       <CalculatorsSection />
       
-      {/* Section 8: Educational Content */}
+      {/* ============================================
+          STEP 8: LATEST FROM OUR BLOG
+          Blog preview and latest articles
+          ============================================ */}
       <BlogPreview />
       
-      {/* Section 10: Call to Action - Get Diet Plan */}
+      {/* ============================================
+          STEP 9: OUR GOALS - What We Offer
+          Services and diet plan goals
+          ============================================ */}
+      <Services />
+      
+      {/* ============================================
+          STEP 10: WHY CHOOSE FITZONE - Build Trust
+          Key features and benefits
+          ============================================ */}
+      <Features />
+      
+      {/* ============================================
+          STEP 11: GET YOUR DIET PLAN FORM
+          Diet plan form - Lead generation
+          ============================================ */}
       <DietPlanForm />
       
-      {/* Footer */}
+      {/* ============================================
+          STEP 11: FOOTER
+          Site links and information
+          ============================================ */}
       <Footer />  
     </main>
   )
 }
-

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/layout/Navbar'
 import Contact from '@/components/Contact'
-import Footer from '@/components/Footer'
+import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
   title: 'Contact Us - FitZone Gym | Get in Touch',

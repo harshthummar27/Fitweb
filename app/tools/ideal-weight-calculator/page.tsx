@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Navbar from '@/components/Navbar'
-import IdealWeightCalculator from '@/components/IdealWeightCalculator'
-import Footer from '@/components/Footer'
+import Navbar from '@/components/layout/Navbar'
+import IdealWeightCalculator from '@/components/calculators/IdealWeightCalculator'
+import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
   title: 'Ideal Weight Calculator - Calculate Your Healthy Weight Range | FitZone Gym',

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Navbar from '@/components/Navbar'
-import BMICalculator from '@/components/BMICalculator'
-import Footer from '@/components/Footer'
+import Navbar from '@/components/layout/Navbar'
+import BMICalculator from '@/components/calculators/BMICalculator'
+import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
   title: 'BMI Calculator - Free Body Mass Index Calculator | FitZone Gym',

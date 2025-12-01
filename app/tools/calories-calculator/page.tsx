@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Navbar from '@/components/Navbar'
-import CaloriesEstimateCalculator from '@/components/CaloriesEstimateCalculator'
-import Footer from '@/components/Footer'
+import Navbar from '@/components/layout/Navbar'
+import CaloriesEstimateCalculator from '@/components/calculators/CaloriesEstimateCalculator'
+import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
   title: 'Calories Calculator - Daily Calorie Needs Calculator | FitZone Gym',

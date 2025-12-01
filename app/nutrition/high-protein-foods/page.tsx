@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Navbar from '@/components/Navbar'
-import HighProteinFood from '@/components/HighProteinFood'
-import Footer from '@/components/Footer'
+import Navbar from '@/components/layout/Navbar'
+import HighProteinFood from '@/components/nutrition/HighProteinFood'
+import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
   title: 'High Protein Foods - Complete List with Protein Content | FitZone Gym',

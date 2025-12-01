@@ -2,73 +2,73 @@ export default function Categories() {
   const categories = [
     {
       id: 1,
-      name: 'Cardio Equipment',
-      icon: '🏃',
-      description: 'Treadmills, Bikes & More',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80'
+      name: 'Foods',
+      icon: '🍽️',
+      description: 'Various Food Items',
+      image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80'
     },
     {
       id: 2,
-      name: 'Strength Training',
-      icon: '💪',
-      description: 'Weights & Machines',
-      image: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&q=80'
+      name: 'Fruits',
+      icon: '🍎',
+      description: 'Fresh Fruits',
+      image: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=400&q=80'
     },
     {
       id: 3,
-      name: 'Protein Supplements',
-      icon: '🥤',
-      description: 'Whey, Casein & More',
-      image: 'https://images.unsplash.com/photo-1556910096-6f5e72db6803?w=400&q=80'
+      name: 'Vegetables',
+      icon: '🥬',
+      description: 'Fresh Vegetables',
+      image: 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400&q=80'
     },
     {
       id: 4,
-      name: 'Yoga & Pilates',
-      icon: '🧘',
-      description: 'Mats & Accessories',
-      image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80'
+      name: 'Fast Food',
+      icon: '🍔',
+      description: 'Quick Meals',
+      image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=80'
     },
     {
       id: 5,
-      name: 'Fitness Apparel',
-      icon: '👕',
-      description: 'Activewear & Shoes',
-      image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&q=80'
+      name: 'Wafers and Snacks',
+      icon: '🍿',
+      description: 'Chips & Snacks',
+      image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&q=80'
     },
     {
       id: 6,
-      name: 'Nutrition Plans',
-      icon: '🥗',
-      description: 'Meal Plans & Diets',
-      image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80'
+      name: 'Juices',
+      icon: '🥤',
+      description: 'Fresh Juices',
+      image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&q=80'
     },
     {
       id: 7,
-      name: 'Personal Training',
-      icon: '👨‍🏫',
-      description: 'Expert Trainers',
-      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=80'
+      name: 'Dairy Products',
+      icon: '🥛',
+      description: 'Milk & Dairy',
+      image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&q=80'
     },
     {
       id: 8,
-      name: 'Group Classes',
-      icon: '👥',
-      description: 'HIIT, Zumba & More',
-      image: 'https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=400&q=80'
+      name: 'Bakery Items',
+      icon: '🍞',
+      description: 'Bread & Pastries',
+      image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80'
     },
     {
       id: 9,
-      name: 'Gym Accessories',
-      icon: '🎒',
-      description: 'Bags, Gloves & More',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80'
+      name: 'Beverage Items',
+      icon: '☕',
+      description: 'Drinks & Beverages',
+      image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80'
     },
     {
       id: 10,
-      name: 'Recovery & Wellness',
-      icon: '💆',
-      description: 'Massage & Therapy',
-      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80'
+      name: 'Dry Fruits and Nuts',
+      icon: '🥜',
+      description: 'Nuts & Dried Fruits',
+      image: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=400&q=80'
     }
   ]
 

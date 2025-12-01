@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Navbar from '@/components/Navbar'
-import Categories from '@/components/Categories'
-import Footer from '@/components/Footer'
+import Navbar from '@/components/layout/Navbar'
+import Categories from '@/components/home/Categories'
+import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
   title: 'Fitness Categories - Equipment, Supplements & More | FitZone Gym',

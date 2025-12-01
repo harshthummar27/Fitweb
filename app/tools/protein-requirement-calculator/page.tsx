@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Navbar from '@/components/Navbar'
-import ProteinRequirementCalculator from '@/components/ProteinRequirementCalculator'
-import Footer from '@/components/Footer'
+import Navbar from '@/components/layout/Navbar'
+import ProteinRequirementCalculator from '@/components/calculators/ProteinRequirementCalculator'
+import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
   title: 'Protein Requirement Calculator - Daily Protein Needs | FitZone Gym',
