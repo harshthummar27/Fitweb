@@ -17,7 +17,8 @@ export default function Hero() {
   const slides = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1920&q=80',
+      mobaileimg : '/1764570286026-mobail.jpg',
+      image: '/1764570286026.jpg',
       alt: 'Fitness and Nutrition'
     },
     {
@@ -80,13 +81,13 @@ export default function Hero() {
                 }`}
               >
                 <Image
-                  src={slide.image}
+                  src={slide.mobaileimg || slide.image}
                   alt={slide.alt}
                   fill
                   priority={index === 0}
-                  className="object-cover"
+                  className="w-full"
                   sizes="100vw"
-                  quality={90}
+                  quality={100}
                 />
               </div>
             ))}

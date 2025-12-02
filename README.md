@@ -72,8 +72,6 @@ You can easily customize:
 - Content in each component file
 - Styling using Tailwind CSS classes
 
-## License
 
-This project is open source and available for personal and commercial use.
 
 "# Fitweb" 
