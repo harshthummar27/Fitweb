@@ -82,23 +82,18 @@ export default function Categories() {
           <div className="w-12 md:w-16 h-0.5 md:h-1 bg-[#9fcc2e] mx-auto mb-2 md:mb-3"></div>
         </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-10 gap-2 sm:gap-3 md:gap-4">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-10 gap-3 sm:gap-4 md:gap-5">
           {categories.map((category) => (
             <div
               key={category.id}
-              className="group cursor-pointer bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden"
+              className="group cursor-pointer flex flex-col items-center"
             >
-              <div className="relative h-14 sm:h-16 md:h-20 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-xl sm:text-2xl md:text-3xl">{category.icon}</span>
-                </div>
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+              <div className="w-full aspect-square flex items-center justify-center mb-2">
+                <span className="text-3xl sm:text-4xl md:text-5xl">{category.icon}</span>
               </div>
-              <div className="p-1.5 sm:p-2 text-center">
-                <h3 className="font-semibold text-gray-900 text-[10px] sm:text-xs group-hover:text-[#9fcc2e] transition-colors line-clamp-1">
-                  {category.name}
-                </h3>
-              </div>
+              <h3 className="text-xs sm:text-sm text-gray-900 text-center font-medium group-hover:text-[#9fcc2e] transition-colors line-clamp-2">
+                {category.name}
+              </h3>
             </div>
           ))}
         </div>

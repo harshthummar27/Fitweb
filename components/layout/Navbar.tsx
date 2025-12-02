@@ -80,24 +80,6 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-3 pt-3 pb-3 space-y-3 bg-gray-800">
-            {/* Search Bar - Mobile */}
-            <form onSubmit={handleSearch}>
-              <div className="relative">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search eggs , paneer, banana..."
-                  className="w-full px-3 py-2 pl-8 pr-3 text-sm bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:border-[#9fcc2e] focus:ring-1 focus:ring-[#9fcc2e]"
-                />
-                <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
-                  <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-              </div>
-            </form>
-
             {/* Mobile Navigation Buttons */}
             <div className="flex flex-col gap-2">
               <Link href="/tools" onClick={() => setIsMenuOpen(false)} className="w-full bg-[#9fcc2e] hover:bg-[#295135] text-white font-semibold py-2 px-4 text-sm rounded-lg transition duration-300">

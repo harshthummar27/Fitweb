@@ -13,25 +13,26 @@ export default function Hero() {
     console.log('Searching for:', searchQuery)
   }
 
-  // Image slides
-  const slides = [
+  // Image slides - filter out slides without images
+  const allSlides = [
     {
       id: 1,
-      mobaileimg : '/1764570286026-mobail.jpg',
       image: '/1764570286026.jpg',
       alt: 'Fitness and Nutrition'
     },
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1920&q=80',
+      image: '',
       alt: 'Healthy Food and Protein'
     },
     {
       id: 3,
-      image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1920&q=80',
+      image: '',
       alt: 'Nutrition and Minerals'
     }
   ]
+  
+  const slides = allSlides.filter(slide => slide.image && slide.image.trim() !== '')
 
   // Auto-slide functionality
   useEffect(() => {
@@ -72,7 +73,7 @@ export default function Hero() {
 
         {/* Hero Slider - Mobile with Padding and Rounded Border */}
         <div className="px-4 pb-4">
-          <div className="relative h-[40vh] rounded-lg overflow-hidden border border-gray-200 shadow-md">
+          <div className="relative h-[20vh] rounded-lg overflow-hidden border border-gray-200 shadow-md">
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
@@ -80,15 +81,17 @@ export default function Hero() {
                   index === currentSlide ? 'opacity-100' : 'opacity-0'
                 }`}
               >
-                <Image
-                  src={slide.mobaileimg || slide.image}
-                  alt={slide.alt}
-                  fill
-                  priority={index === 0}
-                  className="w-full"
-                  sizes="100vw"
-                  quality={100}
-                />
+                {slide.image && (
+                  <Image
+                    src={slide.image}
+                    alt={slide.alt}
+                    fill
+                    priority={index === 0}
+                    className="object-cover w-full"
+                    sizes="100vw"
+                    quality={100}
+                  />
+                )}
               </div>
             ))}
 
@@ -121,15 +124,17 @@ export default function Hero() {
                 index === currentSlide ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              <Image
-                src={slide.image}
-                alt={slide.alt}
-                fill
-                priority={index === 0}
-                className="object-cover"
-                sizes="100vw"
-                quality={90}
-              />
+              {slide.image && (
+                <Image
+                  src={slide.image}
+                  alt={slide.alt}
+                  fill
+                  priority={index === 0}
+                  className="object-cover"
+                  sizes="100vw"
+                  quality={90}
+                />
+              )}
             </div>
           ))}
         </div>
