@@ -73,7 +73,7 @@ export default function Hero() {
 
         {/* Hero Slider - Mobile with Padding and Rounded Border */}
         <div className="px-4 pb-4">
-          <div className="relative h-[20vh] rounded-lg overflow-hidden border border-gray-200 shadow-md">
+          <div className="relative h-[18vh] rounded-lg overflow-hidden border border-gray-200 shadow-md">
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
@@ -87,8 +87,8 @@ export default function Hero() {
                     alt={slide.alt}
                     fill
                     priority={index === 0}
-                    className="object-cover w-full"
-                    sizes="100vw"
+                    className="object-cover w-full h-full"
+                    sizes="(max-width: 768px) 100vw, 100vw"
                     quality={100}
                   />
                 )}
@@ -114,8 +114,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Desktop View: Original Full-Width Slider */}
-      <div className="hidden md:block relative h-[60vh]">
+      {/* Tablet View: Full-Width Slider */}
+      <div className="hidden md:block lg:hidden relative h-[35vh]">
         <div className="relative w-full h-full">
           {slides.map((slide, index) => (
             <div
@@ -130,7 +130,49 @@ export default function Hero() {
                   alt={slide.alt}
                   fill
                   priority={index === 0}
-                  className="object-cover"
+                  className="object-cover w-full h-full"
+                  sizes="(max-width: 1024px) 100vw, 100vw"
+                  quality={90}
+                />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Slider Indicators - Tablet */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex gap-2 items-center">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-1 transition-all duration-300 ${
+                index === currentSlide
+                  ? 'w-10 bg-[#9fcc2e]'
+                  : 'w-5 bg-white/50 hover:bg-white/70'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop View: Full-Width Slider */}
+      <div className="hidden lg:block relative h-[60vh]">
+        <div className="relative w-full h-full">
+          {slides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              {slide.image && (
+                <Image
+                  src={slide.image}
+                  alt={slide.alt}
+                  fill
+                  priority={index === 0}
+                  className="object-cover w-full h-full"
                   sizes="100vw"
                   quality={90}
                 />
