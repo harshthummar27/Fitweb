@@ -72,12 +72,12 @@ export default function Hero() {
         </div>
 
         {/* Hero Slider - Mobile with Padding and Rounded Border */}
-        <div className="px-4 pb-4">
-          <div className="relative h-[18vh] rounded-lg overflow-hidden border border-gray-200 shadow-md">
+        <div className="px-4 pb-4 w-full">
+          <div className="relative w-full h-[18vh] min-h-[200px] max-h-[350px] rounded-lg overflow-hidden border border-gray-200 shadow-md">
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
+                className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
                   index === currentSlide ? 'opacity-100' : 'opacity-0'
                 }`}
               >
@@ -87,8 +87,9 @@ export default function Hero() {
                     alt={slide.alt}
                     fill
                     priority={index === 0}
-                    className="object-cover w-full h-full"
-                    sizes="(max-width: 768px) 100vw, 100vw"
+                    className="object-cover"
+                    style={{ width: '100%', height: '100%' }}
+                    sizes="100vw"
                     quality={100}
                   />
                 )}
@@ -115,12 +116,12 @@ export default function Hero() {
       </div>
 
       {/* Tablet View: Full-Width Slider */}
-      <div className="hidden md:block lg:hidden relative h-[30vh]">
+      <div className="hidden md:block lg:hidden relative w-full h-[30vh] min-h-[300px] max-h-[450px]">
         <div className="relative w-full h-full">
           {slides.map((slide, index) => (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
+              className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
                 index === currentSlide ? 'opacity-100' : 'opacity-0'
               }`}
             >
@@ -130,8 +131,9 @@ export default function Hero() {
                   alt={slide.alt}
                   fill
                   priority={index === 0}
-                  className="object-cover w-full h-full"
-                  sizes="(max-width: 1024px) 100vw, 100vw"
+                  className="object-cover"
+                  style={{ width: '100%', height: '100%' }}
+                  sizes="100vw"
                   quality={90}
                 />
               )}
@@ -157,12 +159,12 @@ export default function Hero() {
       </div>
 
       {/* Desktop View: Full-Width Slider */}
-      <div className="hidden lg:block relative h-[60vh]">
+      <div className="hidden lg:block relative w-full h-[60vh] min-h-[300px] max-h-[450px]">
         <div className="relative w-full h-full">
           {slides.map((slide, index) => (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
+              className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
                 index === currentSlide ? 'opacity-100' : 'opacity-0'
               }`}
             >
@@ -172,7 +174,8 @@ export default function Hero() {
                   alt={slide.alt}
                   fill
                   priority={index === 0}
-                  className="object-cover w-full h-full"
+                  className="object-cover"
+                  style={{ width: '100%', height: '100%' }}
                   sizes="100vw"
                   quality={90}
                 />
