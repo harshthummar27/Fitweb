@@ -115,7 +115,7 @@ export default function Hero() {
       </div>
 
       {/* Tablet View: Full-Width Slider */}
-      <div className="hidden md:block lg:hidden relative h-[35vh]">
+      <div className="hidden md:block lg:hidden relative h-[30vh]">
         <div className="relative w-full h-full">
           {slides.map((slide, index) => (
             <div
