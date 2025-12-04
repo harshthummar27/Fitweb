@@ -90,7 +90,7 @@ export default function Hero() {
 
         {/* Hero Slider - Mobile with Padding and Rounded Border */}
         <div className="px-4 pb-4 w-full">
-          <div className="relative w-full h-[18vh] min-h-[160px] max-h-[350px] rounded-lg overflow-hidden border border-gray-200 shadow-md">
+          <div className="relative w-full h-[16vh] min-h-[150px] max-h-[350px] rounded-lg overflow-hidden border border-gray-200 shadow-md">
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
