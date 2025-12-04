@@ -13,26 +13,43 @@ export default function Hero() {
     console.log('Searching for:', searchQuery)
   }
 
-  // Image slides - filter out slides without images
+  // Image slides with responsive images for different breakpoints
   const allSlides = [
     {
       id: 1,
-      image: '/1764570286026.jpg',
+      image: {
+        mobile: '/1764570286026.jpg', // < 768px
+        tablet: '/1764570286026.jpg', // 768px - 1080px
+        desktop: '/1764570286026.jpg' // >= 1080px
+      },
       alt: 'Fitness and Nutrition'
     },
     {
       id: 2,
-      image: '',
+      image: {
+        mobile: '',
+        tablet: '',
+        desktop: ''
+      },
       alt: 'Healthy Food and Protein'
     },
     {
       id: 3,
-      image: '',
+      image: {
+        mobile: '',
+        tablet: '',
+        desktop: ''
+      },
       alt: 'Nutrition and Minerals'
     }
   ]
   
-  const slides = allSlides.filter(slide => slide.image && slide.image.trim() !== '')
+  // Filter slides that have at least one image
+  const slides = allSlides.filter(slide => 
+    (slide.image.mobile && slide.image.mobile.trim() !== '') ||
+    (slide.image.tablet && slide.image.tablet.trim() !== '') ||
+    (slide.image.desktop && slide.image.desktop.trim() !== '')
+  )
 
   // Auto-slide functionality
   useEffect(() => {
@@ -73,7 +90,7 @@ export default function Hero() {
 
         {/* Hero Slider - Mobile with Padding and Rounded Border */}
         <div className="px-4 pb-4 w-full">
-          <div className="relative w-full h-[18vh] min-h-[200px] max-h-[350px] rounded-lg overflow-hidden border border-gray-200 shadow-md">
+          <div className="relative w-full h-[18vh] min-h-[160px] max-h-[350px] rounded-lg overflow-hidden border border-gray-200 shadow-md">
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
@@ -81,9 +98,9 @@ export default function Hero() {
                   index === currentSlide ? 'opacity-100' : 'opacity-0'
                 }`}
               >
-                {slide.image && (
+                {slide.image.mobile && slide.image.mobile.trim() !== '' && (
                   <Image
-                    src={slide.image}
+                    src={slide.image.mobile}
                     alt={slide.alt}
                     fill
                     priority={index === 0}
@@ -125,9 +142,9 @@ export default function Hero() {
                 index === currentSlide ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              {slide.image && (
+              {slide.image.tablet && slide.image.tablet.trim() !== '' && (
                 <Image
-                  src={slide.image}
+                  src={slide.image.tablet}
                   alt={slide.alt}
                   fill
                   priority={index === 0}
@@ -168,9 +185,9 @@ export default function Hero() {
                 index === currentSlide ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              {slide.image && (
+              {slide.image.desktop && slide.image.desktop.trim() !== '' && (
                 <Image
-                  src={slide.image}
+                  src={slide.image.desktop}
                   alt={slide.alt}
                   fill
                   priority={index === 0}
