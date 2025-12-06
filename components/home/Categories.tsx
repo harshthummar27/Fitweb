@@ -1,74 +1,66 @@
+import Image from 'next/image'
+
 export default function Categories() {
   const categories = [
     {
       id: 1,
       name: 'Foods',
-      icon: '🍽️',
-      description: 'Various Food Items',
-      image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80'
+      image: '/categories/foods.png',
+      description: 'Various Food Items'
     },
     {
       id: 2,
       name: 'Fruits',
-      icon: '🍎',
-      description: 'Fresh Fruits',
-      image: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=400&q=80'
+      image: '/categories/fruits.png',
+      description: 'Fresh Fruits'
     },
     {
       id: 3,
       name: 'Vegetables',
-      icon: '🥬',
-      description: 'Fresh Vegetables',
-      image: 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400&q=80'
+      image: '/categories/foods.png',
+      description: 'Fresh Vegetables'
     },
     {
       id: 4,
       name: 'Fast Food',
-      icon: '🍔',
-      description: 'Quick Meals',
-      image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=80'
+      image: '/categories/fruits.png',
+      description: 'Quick Meals'
     },
     {
       id: 5,
       name: 'Wafers and Snacks',
-      icon: '🍿',
-      description: 'Chips & Snacks',
-      image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&q=80'
+      image: '/categories/foods.png',
+      description: 'Chips & Snacks'
     },
     {
       id: 6,
       name: 'Juices',
-      icon: '🥤',
-      description: 'Fresh Juices',
-      image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&q=80'
+      image: '/categories/fruits.png',
+      description: 'Fresh Juices'
     },
     {
       id: 7,
       name: 'Dairy Products',
-      icon: '🥛',
-      description: 'Milk & Dairy',
-      image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&q=80'
+      image: '/categories/foods.png',
+      description: 'Milk & Dairy'
     },
     {
       id: 8,
       name: 'Bakery Items',
-      icon: '🍞',
-      description: 'Bread & Pastries',
-      image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80'
+      image: '/categories/fruits.png',
+      description: 'Bread & Pastries'
     },
     {
       id: 9,
       name: 'Beverage Items',
-      icon: '☕',
-      description: 'Drinks & Beverages',
-      image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80'
+      image: '/categories/foods.png',
+      description: 'Drinks & Beverages'
     },
     {
       id: 10,
       name: 'Dry Fruits and Nuts',
-      icon: '🥜',
-      description: 'Nuts & Dried Fruits',
-      image: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=400&q=80'
+      image: '/categories/foods.png',
+      description: 'Nuts & Dried Fruits'
     }
   ]
 
@@ -88,10 +80,16 @@ export default function Categories() {
               key={category.id}
               className="group cursor-pointer flex flex-col items-center"
             >
-              <div className="w-full aspect-square flex items-center justify-center mb-2">
-                <span className="text-3xl sm:text-4xl md:text-5xl">{category.icon}</span>
+              <div className="w-full aspect-square flex items-center justify-center mb-2 relative overflow-hidden rounded-lg">
+                <Image
+                  src={category.image}
+                  alt={category.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, (max-width: 1024px) 20vw, (max-width: 1280px) 12.5vw, 10vw"
+                />
               </div>
-              <h3 className="text-xs sm:text-sm text-gray-900 text-center font-medium group-hover:text-[#9fcc2e] transition-colors line-clamp-2">
+              <h3 className="text-xs sm:text-sm text-gray-900 text-center font-bold uppercase group-hover:text-[#9fcc2e] transition-colors line-clamp-2">
                 {category.name}
               </h3>
             </div>
