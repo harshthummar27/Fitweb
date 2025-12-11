@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const pathname = usePathname()
 
@@ -22,8 +21,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex justify-between items-center h-12 md:h-14 gap-2 md:gap-4">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-lg sm:text-xl md:text-2xl font-bold text-[#9fcc2e] hover:text-[#5a6650] transition">
+          <div className="flex-shrink-0 min-w-0">
+            <Link href="/" className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#9fcc2e] hover:text-[#5a6650] transition whitespace-nowrap">
               FitZone
             </Link>
           </div>
@@ -50,48 +49,25 @@ export default function Navbar() {
 
           {/* Navigation Buttons - Desktop */}
           <div className="hidden md:flex items-center gap-2 flex-shrink-0">
-            <Link href="/tools" className="bg-[#9fcc2e] hover:bg-[#295135] text-white font-semibold py-1.5 px-4 text-sm rounded-lg transition duration-300 transform hover:scale-105">
+            <Link href="/tools" className="bg-[#9fcc2e] hover:bg-[#295135] text-white font-semibold py-1.5 px-4 text-sm rounded-lg transition duration-300 transform hover:scale-105 whitespace-nowrap">
               Calculate
             </Link>
-            <Link href="/nutrition" className="bg-transparent border-2 border-[#9fcc2e] hover:bg-[#9fcc2e] text-[#9fcc2e] hover:text-white font-semibold py-1.5 px-4 text-sm rounded-lg transition duration-300">
+            <Link href="/nutrition" className="bg-transparent border-2 border-[#9fcc2e] hover:bg-[#9fcc2e] text-[#9fcc2e] hover:text-white font-semibold py-1.5 px-4 text-sm rounded-lg transition duration-300 whitespace-nowrap">
               Nutrition
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center gap-2">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-[#9fcc2e] focus:outline-none"
-            >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {isMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+          {/* Mobile Navigation Buttons */}
+          <div className="md:hidden flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
+            <Link href="/tools" className="bg-[#9fcc2e] hover:bg-[#295135] text-white font-semibold py-1.5 px-2 text-[10px] sm:text-xs rounded-md transition duration-300 whitespace-nowrap">
+              Calculate
+            </Link>
+            <Link href="/nutrition" className="bg-transparent border border-[#9fcc2e] hover:bg-[#9fcc2e] text-[#9fcc2e] hover:text-white font-semibold py-1.5 px-2 text-[10px] sm:text-xs rounded-md transition duration-300 whitespace-nowrap">
+              Nutrition
+            </Link>
           </div>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-3 pt-3 pb-3 space-y-3 bg-gray-800">
-            {/* Mobile Navigation Buttons */}
-            <div className="flex flex-col gap-2">
-              <Link href="/tools" onClick={() => setIsMenuOpen(false)} className="w-full bg-[#9fcc2e] hover:bg-[#295135] text-white font-semibold py-2 px-4 text-sm rounded-lg transition duration-300">
-                Calculate
-              </Link>
-              <Link href="/nutrition" onClick={() => setIsMenuOpen(false)} className="w-full bg-transparent border-2 border-[#9fcc2e] hover:bg-[#9fcc2e] text-[#9fcc2e] hover:text-white font-semibold py-2 px-4 text-sm rounded-lg transition duration-300">
-                Nutrition
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
     </nav>
   )
 }

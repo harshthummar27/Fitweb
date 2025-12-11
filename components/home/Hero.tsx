@@ -64,6 +64,14 @@ export default function Hero() {
     setCurrentSlide(index)
   }
 
+  const goToPrevious = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+  }
+
+  const goToNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length)
+  }
+
   return (
     <section id="home" className="relative overflow-hidden pt-10 md:pt-15 bg-white">
       {/* Mobile View: Search Bar + Slider with Padding and Rounded Border */}
@@ -113,13 +121,37 @@ export default function Hero() {
               </div>
             ))}
 
+            {/* Navigation Arrows - Mobile */}
+            {slides.length > 1 && (
+              <>
+                <button
+                  onClick={goToPrevious}
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 z-30 w-8 h-8 bg-white rounded-sm shadow-md hover:bg-gray-50 flex items-center justify-center transition-all duration-200"
+                  aria-label="Previous slide"
+                >
+                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={goToNext}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 z-30 w-8 h-8 bg-white rounded-sm shadow-md hover:bg-gray-50 flex items-center justify-center transition-all duration-200"
+                  aria-label="Next slide"
+                >
+                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </>
+            )}
+
             {/* Slider Indicators - Mobile */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex gap-1.5 items-center">
               {slides.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`h-1 transition-all duration-300 ${
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
                     index === currentSlide
                       ? 'w-8 bg-[#9fcc2e]'
                       : 'w-4 bg-white/70 hover:bg-white/90'
@@ -158,13 +190,37 @@ export default function Hero() {
           ))}
         </div>
 
+        {/* Navigation Arrows - Tablet */}
+        {slides.length > 1 && (
+          <>
+            <button
+              onClick={goToPrevious}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-30 w-10 h-10 bg-white rounded-sm shadow-lg hover:bg-gray-50 flex items-center justify-center transition-all duration-200"
+              aria-label="Previous slide"
+            >
+              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={goToNext}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-30 w-10 h-10 bg-white rounded-sm shadow-lg hover:bg-gray-50 flex items-center justify-center transition-all duration-200"
+              aria-label="Next slide"
+            >
+              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </>
+        )}
+
         {/* Slider Indicators - Tablet */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex gap-2 items-center">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-1 transition-all duration-300 ${
+              className={`h-1.5 rounded-full transition-all duration-300 ${
                 index === currentSlide
                   ? 'w-10 bg-[#9fcc2e]'
                   : 'w-5 bg-white/50 hover:bg-white/70'
@@ -201,13 +257,37 @@ export default function Hero() {
           ))}
         </div>
 
+        {/* Navigation Arrows - Desktop */}
+        {slides.length > 1 && (
+          <>
+            <button
+              onClick={goToPrevious}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-30 w-12 h-12 bg-white rounded-sm shadow-lg hover:bg-gray-50 flex items-center justify-center transition-all duration-200"
+              aria-label="Previous slide"
+            >
+              <svg className="w-7 h-7 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={goToNext}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-30 w-12 h-12 bg-white rounded-sm shadow-lg hover:bg-gray-50 flex items-center justify-center transition-all duration-200"
+              aria-label="Next slide"
+            >
+              <svg className="w-7 h-7 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </>
+        )}
+
         {/* Slider Indicators - Desktop */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex gap-2 items-center">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-1 transition-all duration-300 ${
+              className={`h-1.5 rounded-full transition-all duration-300 ${
                 index === currentSlide
                   ? 'w-12 bg-[#9fcc2e]'
                   : 'w-6 bg-white/50 hover:bg-white/70'
