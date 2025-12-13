@@ -13,7 +13,7 @@ export default function Categories() {
     {
       id: 1,
       name: 'Foods',
-      image: '/categories/Foods.png',
+      image: '/categories/foods1.png',
       description: 'Various Food Items'
     },
     {
